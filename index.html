@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jewel Sabang | Portfolio</title>
+  <style>
+    /* --- BASIC RESET --- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #000;
+      color: #fff;
+      line-height: 1.6;
+      transition: filter 0.5s ease;
+    }
+
+    a {
+      color: #fff;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    a:hover {
+      color: #888;
+    }
+
+    /* --- HEADER --- */
+    header {
+      text-align: center;
+      padding: 60px 20px 40px;
+      border-bottom: 1px solid #333;
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      letter-spacing: 2px;
+    }
+
+    header p {
+      margin-top: 10px;
+      color: #aaa;
+    }
+
+    /* Toggle Button */
+    #toggle-bw {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      padding: 10px 18px;
+      background: transparent;
+      border: 2px solid #fff;
+      border-radius: 5px;
+      color: #fff;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.3s, color 0.3s;
+      user-select: none;
+    }
+    #toggle-bw:hover {
+      background: #fff;
+      color: #000;
+    }
+
+    /* --- ABOUT SECTION --- */
+    section {
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h2 {
+      text-transform: uppercase;
+      border-left: 4px solid #fff;
+      padding-left: 10px;
+      margin-bottom: 30px;
+      letter-spacing: 1px;
+    }
+
+    .profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .profile img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      filter: grayscale(100%);
+      border: 3px solid #fff;
+      margin-bottom: 20px;
+      transition: filter 0.5s ease;
+    }
+
+    .skills {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .skill {
+      background: #111;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid #333;
+    }
+
+    .bar {
+      background: #333;
+      height: 10px;
+      border-radius: 5px;
+      overflow: hidden;
+      margin-top: 10px;
+    }
+
+    .fill {
+      background: #fff;
+      height: 100%;
+      transition: width 1s ease-in-out;
+    }
+
+    .contact {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      border-top: 1px solid #333;
+      color: #666;
+      font-size: 0.9em;
+    }
+
+    @media (max-width: 600px) {
+      .skills {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Black & White Mode */
+    body.bw-mode {
+      filter: grayscale(100%);
+    }
+
+    /* Keep profile photo grayscale regardless */
+    body.bw-mode .profile img {
+      filter: grayscale(100%);
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Jewel Sabang</h1>
+    <p>19 years old | Born on December 8, 2005</p>
+    <p>Eager to learn | Graphic & Front-End Designer</p>
+    <button id="toggle-bw">B/W On</button>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="profile">
+      <img src="d66949b5-3865-42b5-8265-7dcb862cc6bc.png" alt="Profile Photo">
+      <p>Hello! I’m <b>Jewel Sabang</b>, a passionate learner exploring the world of design and front-end development.  
+      I enjoy creating clean and functional digital designs that connect creativity and technology.</p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="skill">
+        <h3>Figma</h3>
+        <div class="bar"><div class="fill" style="width:60%"></div></div>
+      </div>
+      <div class="skill">
+        <h3>HTML</h3>
+        <div class="bar"><div class="fill" style="width:30%"></div></div>
+      </div>
+      <div class="skill">
+        <h3>CSS</h3>
+        <div class="bar"><div class="fill" style="width:30%"></div></div>
+      </div>
+      <div class="skill">
+        <h3>JavaScript</h3>
+        <div class="bar"><div class="fill" style="width:20%"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact">
+      <p>📧 <a href="mailto:sabangjewel@gmail.com">sabangjewel@gmail.com</a></p>
+      <p>📱 09696124112</p>
+      <p>💻 <a href="https://github.com/sabangjewel-web" target="_blank">github.com/sabangjewel-web</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Jewel Sabang. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Skill bars animation
+    window.addEventListener('load', () => {
+      document.querySelectorAll('.fill').forEach(bar => {
+        const width = bar.style.width;
+        bar.style.width = '0';
+        setTimeout(() => { bar.style.width = width; }, 500);
+      });
+    });
+
+    // Black & White toggle button
+    const toggleBtn = document.getElementById('toggle-bw');
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('bw-mode');
+      if(document.body.classList.contains('bw-mode')){
+        toggleBtn.textContent = 'B/W Off';
+      } else {
+        toggleBtn.textContent = 'B/W On';
+      }
+    });
+  </script>
+</body>
+</html>
+
+<style>
+  .big-space {
+    margin-bottom: 150px; 
+  }
+</style>
+<div class="big-space"></div>
+<div></div>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jewel Sabang's Simple Color Changer</title>
+   <style>
+        /* CSS for the box and button */
+       body {
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+           align-items: center;
+           justify-content: center;
+           min-height: 100vh;
+           margin: 0;
+            background-color: #000; /* Light gray background for the page */
+       }
+
+        /* Added the requested ID at the top */
+        #jewelSabangMyFavorateColor {
+            text-align: center;
+            color: #34495e; /* Darker text for visibility */
+           margin-bottom: 5px;
+       }
+
+        #colorBox {
+            width: 200px;
+           height: 200px;
+            background-color: white; /* Default White Color */
+            border: 2px solid #2c3e50;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: black; /* Text color will be changed dynamically */
+            font-weight: bold;
+           font-size: 1.2em;
+            transition: background-color 0.5s ease; /* Smooth color transition */
+       }
+
+        #changeColorButton {
+            padding: 10px 20px;
+            font-size: 1em;
+           cursor: pointer;
+            background-color: #2c3e50; /* Dark button color */
+            color: white;
+            border: none;
+            border-radius: 5px;
+           transition: background-color 0.3s;
+        }
+
+        #changeColorButton:hover {
+            background-color: #34495e;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="jewelSabangMyFavorateColor">Jewel Sabang's Color Changer 🎨</h1>
+    
+    <div id="colorBox">
+        WHITE
+    </div>
+
+    <button id="changeColorButton">
+       Change Box Color
+   </button>
+
+    <script>
+        // JavaScript functionality
+       
+        // 1. Get a reference to the elements
+        const button = document.getElementById('changeColorButton');
+        const box = document.getElementById('colorBox');
+
+        // Define a simplified list of colors using names: black, white, cyan, yellow
+        // The array now holds simple color names (strings)
+        const colors = ['black', 'cyan', 'yellow', 'white'];
+        let colorIndex = 0;
+
+        // Function to determine text color based on background color
+        function getTextColor(bgColor) {
+            // Use black text for lighter colors (white, yellow, cyan) and white text for black
+            if (bgColor === 'black') {
+                return 'white';
+            } else {
+                return 'black';
+            }
+        }
+
+        // 2. Define the function to change the color
+        function changeColor() {
+            // Get the next color in the array
+            const newColor = colors[colorIndex];
+            
+            // Set the box's background color
+            box.style.backgroundColor = newColor;
+            
+            // Set the text color to ensure readability
+            box.style.color = getTextColor(newColor);
+            
+            // Set the text content to the name of the color
+            box.textContent = newColor.toUpperCase();
+            
+            // Increment the index, and loop back to 0 if it goes past the array length
+            // The modulo operator (%) ensures the index wraps around
+            colorIndex = (colorIndex + 1) % colors.length;
+        }
+
+        // 3. Attach the function to the button's 'click' event
+        // The box starts at 'white', so the first click will change it to 'black'
+       button.addEventListener('click', changeColor);
+    </script>
+
+    <style>
+  .big-space {
+    margin-bottom: 300px; 
+  }
+</style>
+<div class="big-space"></div>
+<div></div>
+
+</body>
+</html>
